@@ -1,0 +1,82 @@
+# Configs
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config secondsBetweenRepeat 0.1
+config checkDefaultsOnLoad true
+config focusCheckWidthMax 3000
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+#config windowHintsDuration 5
+config windowHintsSpread true
+#config windowHintsOrder persist
+
+bind e:cmd hint ASDFGHJKLQWERTYUIOPCVBN # use whatever keys you want
+bind g:cmd grid padding:3 1920x1080:12,6
+
+# Misc Aliases
+alias showHintsLeftHand hint ASDFQWERZXCV
+alias showNormalHint hint AOEUIDHTNSYXFBPKGMCW
+
+# Abstract positions
+alias full          move screenOriginX;screenOriginY                  screenSizeX;screenSizeY
+alias lefthalf      move screenOriginX;screenOriginY                  screenSizeX/2;screenSizeY
+alias righthalf     move screenOriginX+screenSizeX/2;screenOriginY    screenSizeX/2;screenSizeY
+alias rightmost     move screenOriginX+screenSizeX*0.3;screenOriginY  screenSizeX*0.7;screenSizeY
+alias rightless     move screenOriginX+screenSizeX*0.7;screenOriginY  screenSizeX*0.3;screenSizeY
+alias leftmost      move screenOriginX;screenOriginY                  screenSizeX*0.7;screenSizeY
+alias leftless      move screenOriginX;screenOriginY                  screenSizeX*0.3;screenSizeY
+alias center        move screenOriginX+screenSizeX*0.1;screenOriginY+screenSizeY*0.1  screenSizeX*0.8;screenSizeY*0.8
+
+# Expose
+alias expose_all        shell wait path:~ '/Applications/Utilities/Expose.app/Contents/MacOS/Expose'
+alias expose_desktop    shell wait path:~ '/Applications/Utilities/Expose.app/Contents/MacOS/Expose 1'
+alias expose_windows    shell wait path:~ '/Applications/Utilities/Expose.app/Contents/MacOS/Expose 2'
+
+
+#i Numpad location Bindings
+bind pad0 ${showHintsLeftHand}
+bind pad1 ${leftless}
+bind pad2 push bottom bar-resize:screenSizeY/2
+bind pad3 ${rightless}
+bind pad4 ${lefthalf}
+bind pad5 ${full}
+bind pad6 ${righthalf}
+bind pad7 ${leftmost}
+bind pad8 push top bar-resize:screenSizeY/2
+bind pad9 ${rightmost}
+bind pad= ${center}
+#bind padEnter grid padding:5 ${mon-laptop}:6,2 ${mon-samsung}:8,3
+bind pad* throw next
+bind pad. focus behind
+
+# Home bindings
+bind m:ctrl,cmd,w ${leftless}
+bind ,:ctrl,cmd,w  push bottom bar-resize:screenSizeY/2
+bind .:ctrl,cmd,w ${rightless}
+bind j:ctrl,cmd,w  ${lefthalf}
+bind k:ctrl,cmd,w  ${full}
+bind l:ctrl,cmd,w  ${righthalf}
+bind u:ctrl,cmd,w  ${leftmost}
+bind i:ctrl,cmd,w  push top bar-resize:screenSizeY/2
+bind o:ctrl,cmd,w  ${rightmost}
+bind h:ctrl,cmd,w  ${center}
+#bind padEnter grid padding:5 ${mon-laptop}:6,2 ${mon-samsung}:8,3
+bind n:ctrl,cmd,w  throw prev
+bind /:ctrl,cmd,w  focus behind
+
+# Responsive resolutions
+bind 1:ctrl,cmd,w move screenOriginX,screenOriginY  788,1024
+bind 2:ctrl,cmd,w move screenOriginX,screenOriginY  1044,768
+bind 3:ctrl,cmd,w move screenOriginX,screenOriginY  1280,900
+bind 4:ctrl,cmd,w move screenOriginX,screenOriginY  1280,1024
+bind 5:ctrl,cmd,w move screenOriginX,screenOriginY  1366,768
+
+# Expose Home bindings
+bind a:ctrl,cmd,w  focus 'Adium'
+bind c:ctrl,cmd,w  focus 'iTerm'
+bind v:ctrl,cmd,w  focus 'MacVim'
+bind b:ctrl,cmd,w  focus 'Google Chrome'
+
+# Reload slate
+bind s:ctrl,cmd,w  relaunch
