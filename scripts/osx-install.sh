@@ -4,6 +4,7 @@ set -e
 pushd ~/dotfiles
 git submodule update --init --recursive
 
+stow -vv git
 stow -vv mjolnir
 stow -vv slate
 stow -vv tmux

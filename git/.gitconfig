@@ -1,0 +1,15 @@
+[user]
+	name = Titus Sanchez
+	email = titusjo@gmail.com
+[alias]
+	co = checkout
+[core]
+	editor = vim
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[color]
+	ui = true
+[push]
+	default = simple
