@@ -6,6 +6,8 @@
 " Preamble ----------------------------------------------------------------- {{{
 
 set shell=/bin/bash
+set term=screen-256color
+set t_ut=
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -37,6 +39,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'rking/ag.vim'
 Bundle 'honza/vim-snippets'
 Bundle 'vim-scripts/restore_view.vim'
+Bundle 'editorconfig/editorconfig-vim'
 
 " Syntax
 Bundle 'groenewege/vim-less'
@@ -329,6 +332,6 @@ augroup END
 augroup ft_python
   au!
   au Filetype python nnoremap <buffer> <leader>r :w<cr>:!clear<cr>:!python %<cr>
-  au Filetype python nnoremap <buffer> <leader>t :w<cr>:!clear<cr>:!python %<cr>
+  au Filetype python nnoremap <buffer> <leader>t :w<cr>:!clear<cr>:!pytest<cr>
 augroup END
 " }}}
