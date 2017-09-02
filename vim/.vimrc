@@ -334,4 +334,10 @@ augroup ft_python
   au Filetype python nnoremap <buffer> <leader>r :w<cr>:!clear<cr>:!python %<cr>
   au Filetype python nnoremap <buffer> <leader>t :w<cr>:!clear<cr>:!pytest<cr>
 augroup END
+
+augroup ft_php
+  au!
+  au Filetype php nnoremap <buffer> <leader>r :w<cr>:!clear<cr>:!php %<cr>
+  au Filetype php nnoremap <buffer> <leader>t :w<cr>:!clear<cr>:!vendor/bin/phpunit<cr>
+augroup END
 " }}}
